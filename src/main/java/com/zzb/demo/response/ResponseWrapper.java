@@ -29,6 +29,10 @@ public class ResponseWrapper {
         return new ResponseEntity<>(new ResponseWrapper(Message.SUCCESS), HttpStatus.OK);
     }
 
+    public static ResponseEntity<ResponseWrapper> successResponse(Object obj) {
+        return new ResponseEntity<>(new ResponseWrapper(Message.SUCCESS, obj), HttpStatus.OK);
+    }
+
     public static ResponseEntity<ResponseWrapper> errorResponse(Message message) {
         return new ResponseEntity<>(new ResponseWrapper(message), HttpStatus.OK);
     }
